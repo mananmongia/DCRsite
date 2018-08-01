@@ -4,7 +4,7 @@
   <p><%=porfolio_item.title %></p>
   <p><%=porfolio_item.subtitle %></p>
   <p><%=porfolio_item.body %></p>
-  <p><%=image_tag porfolio_item.thumg_image %></p>
+  <p><%=image_tag porfolio_item.thumg_image unless porfolio_item.thumg_image.nil? %></p>
   <br>
   <br>
 <% end %>
