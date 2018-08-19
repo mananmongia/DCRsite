@@ -5,14 +5,14 @@ class PortfoliosController < ApplicationController
     @portfolio_items = Portfolio.all
   end
   def new
-    @portfolio_items = Portfolio.new
-    3.times {@portfolio_items.technologies.build }
+    @portfolio_item = Portfolio.new
+    3.times {@portfolio_item.technologies.build }
   end
 
   def create
-    @portfolio_items = Portfolio.new(portfolio_params)
+    @portfolio_item = Portfolio.new(portfolio_params)
     respond_to do |format|
-      if @portfolio_items.save
+      if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Blog was successfully created.' }
 
       else
@@ -27,7 +27,7 @@ class PortfoliosController < ApplicationController
 
   def update
     respond_to do |format|
-      if @portfolio_items.update(portfolio_params)
+      if @portfolio_item.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully updated.' }
 
       else
@@ -59,6 +59,6 @@ class PortfoliosController < ApplicationController
 
   private
   def set_portfolio_item
-    @portfolio_items = Portfolio.find(params[:id])
+    @portfolio_item = Portfolio.find(params[:id])
   end
 end
