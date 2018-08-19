@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   include CurrentUserConcern
   include DefaultPageContent
 
-
+  before_action :copyright_generator
+  def copyright_generator
+    BottomCopyright::Renderer.copyright "Manan Mongia", "All Rigths Reserved"
+  end
   
 end
+
