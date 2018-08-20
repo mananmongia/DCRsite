@@ -72,3 +72,5 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 
 gem 'BottomCopyright', git: "https://github.com/mananmongia/Bottom_copyright-rubygem.git"
+
+gem 'petergate'
