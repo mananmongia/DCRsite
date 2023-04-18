@@ -20,10 +20,12 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: Docker@2
-      displayName: Build an image
+    - task: SonarQubePrepare@5
       inputs:
-        command: build
-        dockerfile: '**/Dockerfile'
-        tags: |
-          $(tag)
+        SonarQube: 'SonarQube_MM_VM'
+        scannerMode: 'CLI'
+        configMode: 'manual'
+        cliProjectKey: 'test-project'
+        cliProjectName: 'test-project'
+        cliSources: '.'
+    - task: SonarQubeAnalyze@5
