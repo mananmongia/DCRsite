@@ -29,6 +29,6 @@ stages:
         cliProjectName: 'test-project'
         cliSources: '.'
     - task: SonarQubeAnalyze@5
-    - task: SonarQubePublish@5
+    - task: sonar-buildbreaker@8
       inputs:
-        pollingTimeoutSec: '600'
+        SonarQube: 'SonarQube_MM_VM'
